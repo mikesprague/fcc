@@ -1,0 +1,75 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+
+.text-center.loading-spinner {
+  color: #000;
+}
+
+div.jumbotron.quote {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin-top: 10% !important;
+}
+
+.quote {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 200px;
+  color: #adadad !important;
+  background-color: rgba(0, 0, 0, 0.67) !important;
+  -ms-border-radius: 25px !important;
+  -webkit-border-radius: 25px !important;
+  -moz-border-radius: 25px !important;
+  -o-border-radius: 25px !important;
+  border-radius: 25px !important;
+}
+
+.quote-content {
+  margin-bottom: 25px !important;
+}
+
+.quote-content p {
+  font: 3.6em/1.2em 'Oleo Script', cursive !important;
+  color: #dedede;
+}
+
+.quote-author {
+  display: none;
+  font-size: 0.8em;
+  margin-bottom: 50px !important;
+  margin-right: 20px;
+}
+
+.quote-author a:hover {
+  text-decoration: none;
+}
+
+.row.action-buttons a.btn {
+  margin-bottom: 5px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: #adadad;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding-top: 20px;
+}
+
+  .footer p a, .footer a:visited {
+    color: #4e7352;
+  }
+  .footer a:hover, .footer a:active {
+    color: #060;
+    text-decoration: none;
+    border-top: 1px dotted #060;
+    border-bottom: 1px dotted #060;
+  }

@@ -97,7 +97,7 @@ span.intro-continue {
   text-align: center;
 }
 .intro-heading {
-  margin-top: -25px;
+  margin-top: 150px;
   font: bold 4em/1.5em 'Source Code Pro', monospace;
   filter: alpha(opacity=50);
   opacity: 0.50;

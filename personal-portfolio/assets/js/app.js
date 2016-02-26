@@ -18,6 +18,6 @@ jQuery( document ).ready( function( $ ) {
       }, 1500, "easeInOutExpo" );
   });
 
-  $( "[data-toggle=\"tooltip\"]" ).tooltip();
+  $( "[data-toggle='tooltip']" ).tooltip();
 
 });

@@ -45,6 +45,7 @@ h1 {
   font-size: 4rem;
   width: 100%;
   text-align: center;
+  white-space: nowrap;
 }
 .octicon,
 .mega-octicon {

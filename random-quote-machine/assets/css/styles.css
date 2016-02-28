@@ -2,20 +2,24 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   min-height: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: 50% 0;
 }
+
 .loading-spinner {
   color: #000;
 }
+
 .quote {
   padding-left: 30px;
   padding-right: 30px;
   margin-top: 10%;
 }
+
 .quote {
   width: 100%;
   height: 100%;
@@ -29,26 +33,32 @@ body {
   -o-border-radius: 25px;
   border-radius: 25px;
 }
+
 .quote-content {
   margin: 50px auto;
 }
+
 .quote-content p {
-  font: 3.6em/1.2em 'Oleo Script', cursive;
+  font: 3.6em/1.2em "Oleo Script", cursive;
   color: #dedede;
 }
+
 .quote-author {
   display: none;
   font-size: 0.8em;
   margin-bottom: 50px;
   margin-right: 20px;
 }
+
 .quote-author a:hover {
   text-decoration: none;
 }
+
 .action-buttons .btn {
   margin-bottom: 10px;
 }
-.footer {
+
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -57,13 +67,18 @@ body {
   background-color: #333;
   background-color: rgba(0, 0, 0, 0.75);
 }
-.footer p {
+
+footer p {
   margin-top: 20px;
 }
-.footer p a, .footer a:visited {
+
+footer p a,
+footer a:visited {
   color: #4e7352;
 }
-.footer a:hover, .footer a:active {
+
+footer a:hover,
+footer a:active {
   color: #060;
   text-decoration: none;
   border-top: 1px dotted #060;

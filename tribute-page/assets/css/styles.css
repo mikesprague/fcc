@@ -5,25 +5,32 @@ body {
 h2 em {
   font-family: Times, "Times New Roman", Georgia, serif;
 }
+
 p {
   font-size: 1.2em;
   line-height: 1.5em;
 }
+
 .as-photo {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
+
 .embed-responsive {
   margin: 25px auto;
 }
+
 h2 sup {
   font-size: 50%;
 }
-.well p, .well ol  {
+
+.well p,
+.well ol {
   font-size: 90%;
 }
-.footer {
+
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -32,15 +39,19 @@ h2 sup {
   background-color: #333;
   background-color: rgba(0, 0, 0, 0.75);
 }
-.footer p {
+
+footer p {
   margin-top: 20px;
   font-size: 1em;
 }
 
-.footer p a, .footer a:visited {
+footer p a,
+footer a:visited {
   color: #4e7352;
 }
-.footer a:hover, .footer a:active {
+
+footer a:hover,
+footer a:active {
   color: #060;
   text-decoration: none;
   border-top: 1px dotted #060;

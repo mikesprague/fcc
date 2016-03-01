@@ -6,13 +6,13 @@ Collection of projects I'm doing while working through the [Free Code Camp](http
 
 ### Basic Front End Development Projects
 
-- [x] Build a Tribute Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-tribute-page) | [Demo](http://codepen.io/mikesprague/full/qbgLJW/)
-- [x] Build a Personal Portfolio Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) | [Demo](http://codepen.io/mikesprague/full/xZyvMR/)
+- [x] Build a Tribute Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-tribute-page) | [Demo](http://fcc.wcdc.io/tribute-page/)
+- [x] Build a Personal Portfolio Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) | [Demo](http://fcc.wcdc.io/personal-portfolio/)
 
 ### Intermediate Front End Development Projects
 
-- [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://codepen.io/mikesprague/full/BjMWdW/)
-- [ ] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | Demo
+- [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://fcc.wcdc.io/random-quote-machine/)
+- [ ] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://fcc.wcdc.io/local-weather/)
 - [ ] Build a Wikipedia Viewer | [Requirements](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) | Demo
 - [ ] Use the Twitch.tv JSON API | [Requirements](http://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) | Demo
 

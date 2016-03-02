@@ -10,7 +10,7 @@ var app = {
       bodyClass = "morning";
     } else if ( hourNum > 7 && hourNum <= 17 ) {
       bodyClass = "day";
-    } else if ( hourNum > 18 && hourNum <= 20 ) {
+    } else if ( hourNum > 17 && hourNum <= 20 ) {
       bodyClass = "evening";
     }
 

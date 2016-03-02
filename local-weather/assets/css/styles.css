@@ -2,36 +2,36 @@
   text-rendering: optimizeLegibility;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  min-height: 100vh;
+html, body {
   height: 100%;
-  font-size: 14px;
-  font-size: 1rem;
-  font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+  min-height: 100vh;
+
   color: #efefef;
   background-color: #000;
+
+  font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
 
 .loading-spinner {
-  display: none;
-  margin: auto;
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+
   height: 100px;
-  height: 7rem;
+  margin: auto;
 }
 
 .weather-data {
-  min-height: 24rem;
-  border-radius: 3rem;
-  box-sizing: border-box;
+  min-height: 200px;
+  margin-top: 20px;
+}
+
+.current-conditions {
+  padding: 0;
 }
 
 h1 small,
@@ -111,26 +111,33 @@ p {
   background-image: linear-gradient(to bottom, #002 0%, #1a4067 100%);
 }
 
+h1 small,
+h2 small {
+  color: #afafaf;
+}
+
 h1 {
-  text-transform: capitalize;
-  font-size: 36px;
-  font-size: 3.6rem;
-  font-weight: bold;
-  letter-spacing: 10px;
-  letter-spacing: 1rem;
   text-align: center;
+  letter-spacing: 10px;
+  text-transform: capitalize;
+
+  font-size: 36px;
+  font-weight: bold;
 }
 
 h1 > small {
-  text-transform: uppercase;
-  font-weight: bold;
   white-space: nowrap;
-  letter-spacing: 0.75rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  font-weight: bold;
 }
 
 h2 {
   margin: 0 auto;
   padding: 0;
+
+  font-size: 30px;
 }
 
 h2 > small {
@@ -149,30 +156,29 @@ hr {
 .current-humidity p,
 .current-visibility p,
 .current-feels-like p {
-  white-space: nowrap;
   cursor: default;
   text-align: center;
+  white-space: nowrap;
 }
 
 .current-icon i {
   margin-top: 20px;
-  margin-top: 1.4rem;
-  font-size: 100px;
-  font-size: 7.1rem;
-  font-weight: 300;
+
+  font-size: 70px;
 }
 
 .current-temp p {
   margin-top: -20px;
-  margin-top: -1.4rem;
-  font-size: 100px;
-  font-size: 7.1rem;
+
+  font-size: 90px;
 }
 
 .last-updated p {
   margin-top: 0;
-  font-size: 14px;
+
   text-align: center;
+
+  font-size: 14px;
 }
 
 .forecast {
@@ -180,26 +186,52 @@ hr {
 }
 
 .forecast p {
-  font-size: 15px;
   white-space: nowrap;
+
+  font-size: 15px;
+}
+
+.template-error-message {
+  display: block;
+}
+
+hr {
+  display: none;
+
+  margin: 10px auto;
+}
+
+.main-container {
+  margin-bottom: -60px;
+}
+
+.main-container::after {
+  display: block;
+
+  content: "";
+}
+
+footer,
+.page-wrap::after {
+  height: 60px;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  min-width: 100vw;
   width: 100%;
+  min-width: 100vw;
   height: 60px;
+
   background-color: #333;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 footer p {
-  font-family: "Arial", sans-serif;
-  color: #666;
   margin-top: 20px;
+
+  color: #666;
+
+  font-family: "Arial", sans-serif;
   font-size: 11px;
-  font-size: 1.1rem;
 }
 
 footer p a,
@@ -209,8 +241,95 @@ footer a:visited {
 
 footer a:hover,
 footer a:active {
-  color: #030;
   text-decoration: none;
+
+  color: #030;
   border-top: 1px dotted #030;
   border-bottom: 1px dotted #030;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .current-icon i {
+    margin-top: 10px;
+
+    font-size: 50px;
+  }
+
+  .github-corner {
+    display: none;
+  }
+
+  .current-temp p {
+    margin-top: -10px;
+
+    font-size: 60px;
+  }
+
+  .weather-data {
+    margin-top: 5px;
+  }
+
+}
+
+@media (min-width: 850px) {
+
+  p {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .forecast p {
+    font-size: 20px;
+  }
+
+  .last-updated p {
+    font-size: 18px;
+  }
+
+  .current-temp p {
+    margin-top: -20px;
+
+    font-size: 110px;
+  }
+
+  .current-icon i {
+    font-size: 100px;
+  }
+
 }

@@ -17,6 +17,70 @@ var app = {
     return bodyClass;
   },
 
+  setBodyBgColor: function() {
+    $( "body" ).addClass( app.getBodyBgColorClass() );
+  },
+
+  showLoading: function() {
+    app.hideUi();
+    $( ".loading-spinner" ).show();
+  },
+
+  hideLoading: function() {
+    $( ".loading-spinner" ).hide();
+    app.showUi();
+  },
+
+  hideUi: function() {
+    $( "hr" ).hide();
+    $( ".search-controls" ).hide();
+  },
+
+  showUi: function() {
+    $( "hr" ).show();
+    $( ".search-controls" ).show();
+  },
+
+  initTooltips: function() {
+    $( "[data-toggle=\"tooltip\"]" ).tooltip();
+  },
+
+  initBtnLocation: function() {
+   $( ".btn-geolocation" ).on( "click", function( e ) {
+     $( this ).tooltip( "hide" );
+     app.getLocation();
+   });
+  },
+
+  initBtnPostalCode: function() {
+
+   $( ".btn-postal-code" ).on( "click", function( e ) {
+     $( this ).parent().tooltip( "hide" );
+     var postalCode = $( ".postal-code" ).val();
+
+     if ( $.trim(postalCode) === "" ) {
+       app.showError( "Please enter a valid postal code and try again." );
+     } else {
+       app.getWeather( postalCode );
+     }
+   });
+
+  },
+
+  showError: function( msg ) {
+
+    var errorMessageTemplate = $( "#template-error-message" ).html();
+    // populate last updated time
+
+    var errorMessageView = {
+      error_message: msg
+    };
+    var errorMessageString = Mustache.render( errorMessageTemplate, errorMessageView );
+
+    $( "hr:first" ).after( errorMessageString );
+
+  },
+
   getLocation: function() {
 
     if ( "geolocation" in navigator ) {
@@ -24,15 +88,14 @@ var app = {
         app.getWeather( position.coords.latitude + "," + position.coords.longitude );
       });
     } else {
-      app.getWeather( app.defaultLocation );
+      app.showError( "Your browser does not support this feature. Try using your postal code." );
     }
 
   },
 
   getWeather: function( weatherLocation ) {
 
-    $( ".loading-spinner" ).show();
-    $( "body" ).addClass( app.getBodyBgColorClass() );
+    app.showLoading();
 
     $.simpleWeather({
       location: weatherLocation,
@@ -77,9 +140,9 @@ var app = {
         // populate weather data row two
         var barometricIconClass = "fa fa-arrows-h"; //steady
         if ( parseInt( weather.rising ) === 1) {
-          barometricIconClass = "wi wi-direction-up-right";
+          barometricIconClass = "wi wi-direction-up";
         } else if ( parseInt( weather.rising ) === 2 ) {
-          barometricIconClass = "wi wi-direction-down-right";
+          barometricIconClass = "wi wi-direction-down";
         }
 
         var weatherDataRowTwoTemplate = $( "#template-weather-data-row-2" ).html();
@@ -120,18 +183,24 @@ var app = {
         var lastUpdatedString = Mustache.render( lastUpdatedTemplate, lastUpdatedView );
         $( ".last-updated").html( lastUpdatedString );
 
-        $( "[data-toggle='tooltip']" ).tooltip();
-        $( ".loading-spinner" ).hide();
+        app.initTooltips();
+        app.hideLoading();
       },
 
       error: function(error) {
-        // $("h1.location").text("Error:");
-        $(".weather-data").html("<p>" + error.message + "</p>");
-        $( ".loading-spinner" ).hide();
-
+        app.showError( "There was a problem retrieving your weather conditions. Please try again." );
+        app.hideLoading();
       }
     });
+  },
+
+  init: function() {
+    app.setBodyBgColor();
+    app.initBtnLocation();
+    app.initBtnPostalCode();
+    app.getWeather( app.defaultLocation );
   }
+
 };
 
-app.getLocation();
+app.init();

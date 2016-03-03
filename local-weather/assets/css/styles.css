@@ -34,11 +34,6 @@ body {
   padding: 0;
 }
 
-h1 small,
-h2 small {
-  color: #afafaf;
-}
-
 p {
   font-size: 20px;
 }
@@ -49,75 +44,23 @@ p {
 
 .morning {
   background-color: #fe8f53;
-  /*background-image:
-    -webkit-gradient(
-  	linear,
-  	left top,
-  	left bottom,
-  	color-stop(0, #a13c05),
-  	color-stop(1, #fe8f53)
-  );
-  background-image: -o-linear-gradient(bottom, #a13c05 0%, #fe8f53 100%);
-  background-image: -moz-linear-gradient(bottom, #a13c05 0%, #fe8f53 100%);
-  background-image: -webkit-linear-gradient(bottom, #a13c05 0%, #fe8f53 100%);
-  background-image: -ms-linear-gradient(bottom, #a13c05 0%, #fe8f53 100%);
-  background-image: linear-gradient(to bottom, #a13c05 0%, #fe8f53 100%);*/
 }
 
 .day {
   background-color: #27d8e8;
-  /*background-image:
-    -webkit-gradient(
-  	linear,
-  	left top,
-  	left bottom,
-  	color-stop(0, #0d70a1),
-  	color-stop(1, #27d8e8)
-  );
-  background-image: -o-linear-gradient(bottom, #0d70a1 0%, #27d8e8 100%);
-  background-image: -moz-linear-gradient(bottom, #0d70a1 0%, #27d8e8 100%);
-  background-image: -webkit-linear-gradient(bottom, #0d70a1 0%, #27d8e8 100%);
-  background-image: -ms-linear-gradient(bottom, #0d70a1 0%, #27d8e8 100%);
-  background-image: linear-gradient(to bottom, #0d70a1 0%, #27d8e8 100%);*/
 }
 
 .evening {
   background-color: #563c5c;
-  /*background-image:
-    -webkit-gradient(
-  	linear,
-  	left top,
-  	left bottom,
-  	color-stop(0, #23032b),
-  	color-stop(1, #563c5c)
-  );
-  background-image: -o-linear-gradient(bottom, #23032b 0%, #563c5c 100%);
-  background-image: -moz-linear-gradient(bottom, #23032b 0%, #563c5c 100%);
-  background-image: -webkit-linear-gradient(bottom, #23032b 0%, #563c5c 100%);
-  background-image: -ms-linear-gradient(bottom, #23032b 0%, #563c5c 100%);
-  background-image: linear-gradient(to bottom, #23032b 0%, #563c5c 100%);*/
 }
 
 .night {
   background-color: #1a4067;
-  /*background-image:
-    -webkit-gradient(
-	  linear,
-	  left top,
-	  left bottom,
-	  color-stop(0, #002),
-	  color-stop(1, #1a4067)
-  );
-  background-image: -o-linear-gradient(bottom, #002 0%, #1a4067 100%);
-  background-image: -moz-linear-gradient(bottom, #002 0%, #1a4067 100%);
-  background-image: -webkit-linear-gradient(bottom, #002 0%, #1a4067 100%);
-  background-image: -ms-linear-gradient(bottom, #002 0%, #1a4067 100%);
-  background-image: linear-gradient(to bottom, #002 0%, #1a4067 100%);*/
 }
 
 h1 small,
 h2 small {
-  color: #afafaf;
+  color: #cdcdcd;
 }
 
 h1 {

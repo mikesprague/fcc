@@ -77,14 +77,22 @@ var app = {
     $( "hr:first" ).after( errorMessageString );
   },
 
+  showAltUnit: function() {
+    $( ".primary-unit" ).hide();
+    $( ".alt-unit" ).show();
+  },
+
+  showPrimaryUnit: function() {
+    $( ".alt-unit" ).hide();
+    $( ".primary-unit" ).show();
+  },
+
   initUnitToggle: function() {
     $( ".current-temp p" ).on( "click", function( e ) {
       if ( $( this ).hasClass( "primary-unit" )) {
-        $( ".primary-unit" ).hide();
-        $( ".alt-unit" ).show();
+        app.showAltUnit();
       } else {
-        $( ".alt-unit" ).hide();
-        $( ".primary-unit" ).show();
+        app.showPrimaryUnit();
       }
       $( this ).parent().tooltip( "hide" );
     });

@@ -53,7 +53,6 @@ var app = {
   },
 
   initBtnPostalCode: function() {
-
    $( ".btn-postal-code" ).on( "click", function( e ) {
      $( this ).parent().tooltip( "hide" );
      var postalCode = $( ".postal-code" ).val();
@@ -64,21 +63,31 @@ var app = {
        app.getWeather( postalCode );
      }
    });
-
   },
 
   showError: function( msg ) {
-
     var errorMessageTemplate = $( "#template-error-message" ).html();
-    // populate last updated time
 
+    // populate error message
     var errorMessageView = {
       error_message: msg
     };
     var errorMessageString = Mustache.render( errorMessageTemplate, errorMessageView );
 
     $( "hr:first" ).after( errorMessageString );
+  },
 
+  initUnitToggle: function() {
+    $( ".current-temp p" ).on( "click", function( e ) {
+      if ( $( this ).hasClass( "primary-unit" )) {
+        $( ".primary-unit" ).hide();
+        $( ".alt-unit" ).show();
+      } else {
+        $( ".alt-unit" ).hide();
+        $( ".primary-unit" ).show();
+      }
+      $( this ).parent().tooltip( "hide" );
+    });
   },
 
   getLocation: function() {
@@ -119,10 +128,14 @@ var app = {
           current_code: weather.code,
           current_conditions: weather.currently,
           current_temp: weather.temp,
-          current_temp_unit: weather.units.temp.toUpperCase()
+          current_temp_unit: weather.units.temp.toUpperCase(),
+          current_temp_alt: weather.alt.temp,
+          current_temp_unit_alt: weather.alt.unit.toUpperCase()
         };
         var primaryDataString = Mustache.render( primaryDataTemplate, primmaryDataView );
         $( ".primary-conditions-data" ).html( primaryDataString );
+
+        app.initUnitToggle();
 
 
         //populate weather data row one
@@ -132,7 +145,7 @@ var app = {
           wind_unit: weather.units.speed,
           wind_direction: weather.wind.direction.toLowerCase(),
           humidity: weather.humidity,
-          sunset_time: weather.sunset
+          sunrise_time: weather.sunrise
         };
         var weatherDataRowOne = Mustache.render( weatherDataRowOneTemplate, weatherDataRowOneView );
         $( ".weather-data-row-1").html( weatherDataRowOne );
@@ -152,7 +165,7 @@ var app = {
           pressure_direction_icon_class: barometricIconClass,
           visibility: weather.visibility,
           visibility_unit: weather.units.distance,
-          feels_like_temp: weather.wind.chill
+          sunset_time: weather.sunset
         };
         var weatherDataRowTwo = Mustache.render( weatherDataRowTwoTemplate, weatherDataRowTwoView );
         $( ".weather-data-row-2").html( weatherDataRowTwo );
@@ -168,7 +181,9 @@ var app = {
             day_name: currentDay,
             weather_code: weather.forecast[i].code,
             temp_low: weather.forecast[i].low,
+            temp_low_alt: weather.forecast[i].alt.low,
             temp_high: weather.forecast[i].high,
+            temp_high_alt: weather.forecast[i].alt.high,
             forecast_string: weather.forecast[i].text
           };
           var forecastString = Mustache.render( forecastTemplate, forecastView );

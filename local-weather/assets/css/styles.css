@@ -7,7 +7,7 @@ body {
   height: 100%;
   min-height: 100vh;
 
-  color: #efefef;
+  color: #fff;
 
   font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
@@ -43,19 +43,19 @@ p {
 }
 
 .morning {
-  background-color: #fe8f53;
+  background-color: #c35114;
 }
 
 .day {
-  background-color: #27d8e8;
+  background-color: #1889c1;
 }
 
 .evening {
-  background-color: #563c5c;
+  background-color: #462f4b;
 }
 
 .night {
-  background-color: #1a4067;
+  background-color: ##133150;
 }
 
 h1 small,

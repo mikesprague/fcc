@@ -12,7 +12,7 @@ Collection of projects I'm doing while working through the [Free Code Camp](http
 ### Intermediate Front End Development Projects
 
 - [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://fcc.wcdc.io/random-quote-machine/)
-- [ ] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://fcc.wcdc.io/local-weather/)
+- [x] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://fcc.wcdc.io/local-weather/)
 - [ ] Build a Wikipedia Viewer | [Requirements](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) | Demo
 - [ ] Use the Twitch.tv JSON API | [Requirements](http://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) | Demo
 

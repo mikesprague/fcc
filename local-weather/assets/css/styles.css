@@ -7,7 +7,7 @@ body {
   height: 100%;
   min-height: 100vh;
 
-  color: #fff;
+  color: rgb(255, 255, 255);
 
   font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
@@ -43,24 +43,24 @@ p {
 }
 
 .morning {
-  background-color: #c35114;
+  background-color: rgb(195, 81, 20);
 }
 
 .day {
-  background-color: #1889c1;
+  background-color: rgb(24, 137, 193);
 }
 
 .evening {
-  background-color: #462f4b;
+  background-color: rgb(70, 47, 75);
 }
 
 .night {
-  background-color: ##133150;
+  background-color: rgb(19, 49, 80);
 }
 
 h1 small,
 h2 small {
-  color: #cdcdcd;
+  color: rgb(205, 205, 205);
 }
 
 h1 {
@@ -177,14 +177,14 @@ footer {
   min-width: 100vw;
   height: 60px;
 
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 footer p {
   margin-top: 20px;
 
-  color: #666;
+  color: rgb(102, 102, 102);
 
   font-family: "Arial", sans-serif;
   font-size: 11px;
@@ -192,16 +192,16 @@ footer p {
 
 footer p a,
 footer a:visited {
-  color: #030;
+  color: rgb(0, 51, 0);
 }
 
 footer a:hover,
 footer a:active {
   text-decoration: none;
 
-  color: #030;
-  border-top: 1px dotted #030;
-  border-bottom: 1px dotted #030;
+  color: rgb(0, 51, 0);
+  border-top: 1px dotted rgb(0, 51, 0);
+  border-bottom: 1px dotted rgb(0, 51, 0);
 }
 
 .github-corner:hover .octo-arm {

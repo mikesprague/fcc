@@ -55,26 +55,44 @@ var app = {
   initBtnPostalCode: function() {
    $( ".btn-postal-code" ).on( "click", function( e ) {
      $( this ).parent().tooltip( "hide" );
-     var postalCode = $( ".postal-code" ).val();
-
-     if ( $.trim(postalCode) === "" ) {
-       app.showError( "Please enter a valid postal code and try again." );
-     } else {
-       app.getWeather( postalCode );
-     }
+     app.submitPostalCodeSearch();
    });
+  },
+
+  initPostalCodeField: function() {
+    $( ".postal-code" ).on( "keypress", function( e ) {
+      if ( e.which === 13 ) {
+        app.submitPostalCodeSearch();
+      }
+    });
+  },
+
+  submitPostalCodeSearch: function() {
+    var postalCode = $( ".postal-code" ).val();
+
+    if ( $.trim(postalCode) === "" ) {
+      app.showError( "Please enter a valid postal code and try again." );
+    } else {
+      app.removeError();
+      app.getWeather( postalCode );
+    }
   },
 
   showError: function( msg ) {
     var errorMessageTemplate = $( "#template-error-message" ).html();
 
-    // populate error message
     var errorMessageView = {
       error_message: msg
     };
     var errorMessageString = Mustache.render( errorMessageTemplate, errorMessageView );
 
-    $( "hr:first" ).after( errorMessageString );
+    if ( ! $( ".error-message" ).is( ":visible" ) ) {
+      $( "hr:first" ).after( errorMessageString );
+    }
+  },
+
+  removeError: function() {
+    $( ".error-message" ).remove();
   },
 
   showAltUnit: function() {
@@ -99,7 +117,6 @@ var app = {
   },
 
   getLocation: function() {
-
     if ( "geolocation" in navigator ) {
       navigator.geolocation.getCurrentPosition( function( position ) {
         app.getWeather( position.coords.latitude + "," + position.coords.longitude );
@@ -107,18 +124,16 @@ var app = {
     } else {
       app.showError( "Your browser does not support this feature. Try using your postal code." );
     }
-
   },
 
   getWeather: function( weatherLocation ) {
-
     app.showLoading();
 
     $.simpleWeather({
       location: weatherLocation,
       unit: "f",
       cache: false,
-      success: function(weather) {
+      success: function( weather ) {
 
         //populate location
         var locationTemplate = $( "#template-location" ).html();
@@ -128,7 +143,7 @@ var app = {
           country: weather.country
         };
         var locationString = Mustache.render( locationTemplate, locationView );
-        $( ".location").html( locationString );
+        $( ".location" ).html( locationString );
 
         //populate primary data
         var primaryDataTemplate = $( "#template-primary-data").html();
@@ -156,7 +171,7 @@ var app = {
           sunrise_time: weather.sunrise
         };
         var weatherDataRowOne = Mustache.render( weatherDataRowOneTemplate, weatherDataRowOneView );
-        $( ".weather-data-row-1").html( weatherDataRowOne );
+        $( ".weather-data-row-1" ).html( weatherDataRowOne );
 
         // populate weather data row two
         var barometricIconClass = "fa fa-arrows-h"; //steady
@@ -176,7 +191,7 @@ var app = {
           sunset_time: weather.sunset
         };
         var weatherDataRowTwo = Mustache.render( weatherDataRowTwoTemplate, weatherDataRowTwoView );
-        $( ".weather-data-row-2").html( weatherDataRowTwo );
+        $( ".weather-data-row-2" ).html( weatherDataRowTwo );
 
         // populate forecast
         var forecastTemplate = $( "#template-forecast" ).html();
@@ -198,7 +213,6 @@ var app = {
           $( ".forecast-" + i ).html( forecastString );
         }
 
-        // populate last updated time
         var lastUpdatedTemplate = $( "#template-last-updated" ).html();
         var lastUpdatedView = {
           last_updated: weather.updated
@@ -210,7 +224,7 @@ var app = {
         app.hideLoading();
       },
 
-      error: function(error) {
+      error: function( error ) {
         app.showError( "There was a problem retrieving your weather conditions. Please try again." );
         app.hideLoading();
       }
@@ -222,8 +236,13 @@ var app = {
     app.initBtnLocation();
     app.initBtnPostalCode();
     app.getWeather( app.defaultLocation );
+    app.initPostalCodeField();
   }
 
 };
 
-app.init();
+jQuery( document ).ready( function( $ ) {
+
+  app.init();
+
+});

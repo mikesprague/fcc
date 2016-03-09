@@ -39,21 +39,8 @@ var app = {
   }, // end getBackgroundFromFlickr()
 
   setBodyBackgroundImage: function( bgImage ) {
-    $( "body" ).css( "background-image", "" );
-
     if ( $.trim( bgImage ).length > 5  ) {
-      $( "body" ).css({
-        "min-height": "100%",
-        "height": "100%",
-        "background-repeat": "no-repeat",
-        "background-position": "50% 0",
-        "-ms-background-size": "cover",
-        "-o-background-size": "cover",
-        "-moz-background-size": "cover",
-        "-webkit-background-size": "cover",
-        "background-size": "cover",
-        "background-image": "url(" + bgImage + ")"
-      });
+      $( "body" ).css( "background-image", "url(" + bgImage + ")" );
     }
 
   }, // end setBodyBackgroundImage()
@@ -66,8 +53,6 @@ var app = {
         quoteAuthorLink = "",
         quoteLink = "",
         quoteSource = "";
-        // var openQuote = '<i class="fa fa-quote-left"></i> ';
-        // var quoteContent = $( quoteText ).prepend( openQuote );
 
     app.quoteElement.html( app.loadingIndicator );
     $.ajax({

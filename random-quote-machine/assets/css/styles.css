@@ -7,6 +7,20 @@ body {
   min-height: 100vh;
   height: 100%;
   overflow-x: hidden;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.67);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  transition: background-image 0.5s linear;
+  -ms-transition: background-image 0.5s linear;
+  -o-transition: background-image 0.5s linear;
+  -moz-transition: background-image 0.5s linear;
+  -webkit-transition: background-image 0.5s linear;
 }
 
 body {

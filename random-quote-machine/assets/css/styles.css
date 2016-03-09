@@ -16,11 +16,6 @@ body {
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
-  transition: background-image 0.5s linear;
-  -ms-transition: background-image 0.5s linear;
-  -o-transition: background-image 0.5s linear;
-  -moz-transition: background-image 0.5s linear;
-  -webkit-transition: background-image 0.5s linear;
 }
 
 body {

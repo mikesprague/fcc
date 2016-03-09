@@ -34,11 +34,13 @@ var app = {
   hideUi: function() {
     $( "hr" ).hide();
     $( ".search-controls" ).hide();
+    $( ".link-toggle-units" ).hide();
   },
 
   showUi: function() {
     $( "hr" ).show();
     $( ".search-controls" ).show();
+    $( ".link-toggle-units" ).show();
   },
 
   initTooltips: function() {
@@ -113,6 +115,18 @@ var app = {
         app.showPrimaryUnit();
       }
       $( this ).parent().tooltip( "hide" );
+    });
+  },
+
+  initUnitToggleLink: function() {
+    $( ".link-toggle-units" ).on( "click", function( e ) {
+      var mainToggle = $( ".current-temp p:visible" );
+
+      if ( mainToggle.hasClass( "primary-unit" )) {
+        app.showAltUnit();
+      } else {
+        app.showPrimaryUnit();
+      }
     });
   },
 
@@ -219,6 +233,8 @@ var app = {
         };
         var lastUpdatedString = Mustache.render( lastUpdatedTemplate, lastUpdatedView );
         $( ".last-updated").html( lastUpdatedString );
+
+        app.initUnitToggleLink();
 
         app.initTooltips();
         app.hideLoading();

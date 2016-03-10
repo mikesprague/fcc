@@ -100,16 +100,16 @@ ul.navbar-text a:active {
 
 .section-intro {
   text-align: center;
-  background-image: url("https://dl.dropboxusercontent.com/u/146321/fcc/personal-portfolio/assets/img/bg-main.jpg");
+  background-image: url("./assets/img/bg-main.jpg");
 }
 
 .section-one {
-  background-image: url("https://dl.dropboxusercontent.com/u/146321/fcc/personal-portfolio/assets/img/bg-about.jpg");
+  background-image: url("./assets/img/bg-about.jpg");
   text-align: center;
 }
 
 .section-two {
-  background-image: url("https://dl.dropboxusercontent.com/u/146321/fcc/personal-portfolio/assets/img/bg-portfolio.jpg");
+  background-image: url("./assets/img/bg-portfolio.jpg");
   text-align: center;
 }
 

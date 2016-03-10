@@ -42,7 +42,7 @@ var app = {
     if ( $.trim( bgImage ).length > 5  ) {
       $( "body" ).animate( { opacity: 0 }, 0 )
         .css( "background-image", "url(" + bgImage + ")" )
-        .animate( { opacity: 1 }, "0.67s" );
+        .animate( { opacity: 1 }, 750 );
     }
 
   }, // end setBodyBackgroundImage()

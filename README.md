@@ -6,13 +6,13 @@ Collection of projects I'm doing while working through the [Free Code Camp](http
 
 ### Basic Front End Development Projects
 
-- [x] Build a Tribute Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-tribute-page) | [Demo](http://mikesprague.github.io/tribute-page/)
-- [x] Build a Personal Portfolio Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) | [Demo](http://mikesprague.github.io/personal-portfolio/)
+- [x] Build a Tribute Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-tribute-page) | [Demo](http://fcc.mikesprague.me/tribute-page/)
+- [x] Build a Personal Portfolio Page | [Requirements](http://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage) | [Demo](http://fcc.mikesprague.me/personal-portfolio/)
 
 ### Intermediate Front End Development Projects
 
-- [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://mikesprague.github.io/random-quote-machine/)
-- [x] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://mikesprague.github.io/local-weather/)
+- [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://fcc.mikesprague.me/random-quote-machine/)
+- [x] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://fcc.mikesprague.me/local-weather/)
 - [ ] Build a Wikipedia Viewer | [Requirements](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) | Demo
 - [ ] Use the Twitch.tv JSON API | [Requirements](http://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) | Demo
 

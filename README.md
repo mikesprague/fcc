@@ -25,6 +25,14 @@ Collection of projects I'm doing while working through the [Free Code Camp](http
 
 ## Data Visualization Certification
 
+### React Projects
+
+- [ ] Build a Markdown Previewer | [Requirements](http://www.freecodecamp.com/challenges/build-a-markdown-previewer) | Demo | Source Code
+- [ ] Build a Camper Leaderboard | [Requirements](http://www.freecodecamp.com/challenges/build-a-camper-leaderboard) | Demo | Source Code
+- [ ] Build a Recipe Box | [Requirements](http://www.freecodecamp.com/challenges/build-a-recipe-box) | Demo | Source Code
+- [ ] Build the Game of Life | [Requirements](http://www.freecodecamp.com/challenges/build-the-game-of-life) | Demo | Source Code
+- [ ] Build a Roguelike Dungeon Crawler Game | [Requirements](http://www.freecodecamp.com/challenges/build-a-roguelike-dungeon-crawler-game) | Demo | Source Code
+
 ### Data Visualization Projects
 
 - [ ] Visualize Data with a Bar Chart | [Requirements](http://www.freecodecamp.com/challenges/visualize-data-with-a-bar-chart) | Demo | Source Code

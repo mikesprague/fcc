@@ -269,13 +269,14 @@ a.link-toggle-units:active {
   }
 
   .current-temp p {
-    margin-top: -20px;
+    margin-top: 0;
 
     font-size: 110px;
   }
 
   .current-icon i {
     font-size: 100px;
+    margin-top: 0;
   }
 
 }

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "saxmonoregular";
+  font-family: saxmonoregular;
   src: url("saxmono/saxmono-webfont.eot");
   src:
     url("saxmono/saxmono-webfont.eot?#iefix") format("embedded-opentype"),
@@ -34,7 +34,7 @@ body {
 }
 
 h1 {
-  font-family: "saxmonoregular", monospace;
+  font-family: saxmonoregular, monospace;
   font-size: 4rem;
   width: 100%;
   text-align: center;

@@ -109,6 +109,7 @@ var app = {
 
   initUnitToggle: function() {
     $( ".current-temp p" ).on( "click", function( e ) {
+      e.preventDefault();
       if ( $( this ).hasClass( "primary-unit" )) {
         app.showAltUnit();
       } else {

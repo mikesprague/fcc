@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free Code Camp Intermediate Front End Projects: Wikipedia Viewer">
+    <meta name="author" content="Mike Sprague">
+    <title>Wikipedia Viewer | Free Code Camp Intermediate Front End Projects | Mike Sprague</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link href="https://code.getmdl.io/1.1.2/material.indigo-orange.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--[if IE]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.2.0/es5-shim.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Wikipedia Viewer</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="text-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input search-field" type="text" id="text-field">
+            </div>
+          </div>
+        </div>
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">
+              Open Random Article <i class="material-icons">open_in_new</i>
+            </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Help</span>
+        <div class="mdl-layout__content">
+          <p>Need to add some text here still</p>
+        </div>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="mdl-grid search-results-max-width search-results"></div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.3.0/jquery-migrate.min.js"></script>
+    <script src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script id="template-search-result" type="text/html">
+      <div class="mdl-cell mdl-card mdl-shadow--6dp search-result-card">
+        <div class="mdl-card__media">
+          <img class="article-image" src="{{thumbnail.source}}" border="0" alt="{{title}}">
+        </div>
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">{{title}}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{extract}}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="http://en.wikipedia.org/?curid={{pageid}}" target="_blank">Read more  <i class="material-icons">open_in_new</i></a>
+        </div>
+      </div>
+    </script>
+
+  </body>
+</html>

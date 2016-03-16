@@ -1,0 +1,51 @@
+* {
+  text-rendering: optimizeLegibility;
+}
+
+.mdl-layout__header-row .mdl-navigation__link:last-of-type {
+  padding-right: 0;
+}
+
+.mdl-layout__drawer .mdl-layout__content {
+  padding-left: 10px;
+}
+
+.search-resultportfolio-card .mdl-card__title {
+  padding-bottom: 0;
+}
+
+img.article-image {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-results h1 {
+  margin: 25px auto;
+}
+
+main.mdl-layout__content::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.25;
+  background-image: url("../img/wikipedia-logo.svg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.search-results-max-width {
+  max-width: 900px;
+  margin: auto;
+}

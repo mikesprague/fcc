@@ -26,10 +26,8 @@ body {
   padding-bottom: 0;
 }
 
-.mdl-card__actions {
+.mdl-card__supporting-text {
   flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
 }
 
 .mdl-layout__header-row:last-child {

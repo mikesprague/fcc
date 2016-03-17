@@ -26,7 +26,12 @@ body {
   padding-bottom: 0;
 }
 
-img.article-image {
+.mdl-layout__header-row:last-child {
+  width: 100%;
+  justify-content: center;
+}
+
+.article-image {
   width: 100%;
   height: 215px;
   object-fit: cover;

@@ -101,6 +101,7 @@ var app = {
     }
 
     app.initDimmable();
+    app.fixBrokenImages();
 
   },
 

@@ -176,6 +176,7 @@ var app = {
     app.initCards( app.usersArray );
     app.initFixedHeader();
     app.fixBrokenImages();
+    app.fixSortSizing();
 
   }
 };

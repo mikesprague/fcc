@@ -1,0 +1,39 @@
+* {
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+.main.menu {
+  background-color: rgb(100, 65, 165);
+}
+
+.main.container {
+  margin-top: 2em;
+}
+
+.card-header.content {
+  height: 5em !important;
+  -webkit-box-flex: 0 !important;
+  -webkit-flex-grow: 0 !important;
+  -ms-flex-positive: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.main.menu {
+  margin-top: 2em;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease, padding 0.5s ease;
+}
+
+.main.menu.fixed {
+  background-color: rgb(100, 65, 165);
+  border: 1px solid rgb(100, 65, 165);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+#sortable-cards .card {
+  display: none;
+}

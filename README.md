@@ -14,7 +14,7 @@ Collection of projects I'm doing while working through the [Free Code Camp](http
 - [x] Build a Random Quote Machine | [Requirements](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) | [Demo](http://fcc.mikesprague.me/random-quote-machine/) | [Source Code](https://github.com/mikesprague/fcc/tree/gh-pages/random-quote-machine)
 - [x] Show the Local Weather | [Requirements](http://www.freecodecamp.com/challenges/show-the-local-weather) | [Demo](http://fcc.mikesprague.me/local-weather/) | [Source Code](https://github.com/mikesprague/fcc/tree/gh-pages/local-weather)
 - [x] Build a Wikipedia Viewer | [Requirements](http://www.freecodecamp.com/challenges/build-a-wikipedia-viewer) | [Demo](http://fcc.mikesprague.me/wikipedia-viewer/) | [Source Code](https://github.com/mikesprague/fcc/tree/gh-pages/wikipedia-viewer)
-- [ ] Use the Twitch.tv JSON API | [Requirements](http://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) | Demo | Source Code
+- [x] Use the Twitch.tv JSON API | [Requirements](http://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) | [Demo](http://fcc.mikesprague.me/twitch-api/) | [Source Code](https://github.com/mikesprague/fcc/tree/gh-pages/twitch-api)
 
 ### Advanced Front End Development Projects
 

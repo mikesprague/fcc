@@ -109,7 +109,8 @@ var app = {
 
     $( "#sortable-cards" ).mixItUp({
       load: {
-        filter: "all"
+        filter: "all",
+        sort: 'online:desc valid:desc name:asc'
       },
       selectors: {
     		target: ".card"
@@ -118,15 +119,14 @@ var app = {
     		display: "flex"
     	},
       animation: {
-        queue: false,
         animateResizeTargets: true
     	},
       callbacks: {
       	onMixEnd: function( state ) {
-          app.fixSizing();
+          app.fixSortSizing();
       	},
         onMixLoad: function( state ) {
-          app.fixSizing();
+          app.fixSortSizing();
       	}
       }
     });
@@ -167,7 +167,7 @@ var app = {
 
   },
 
-  fixSizing: function() {
+  fixSortSizing: function() {
     $( ".content:last" ).css( "flex-grow", "1" );
   },
 

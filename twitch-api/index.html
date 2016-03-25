@@ -47,7 +47,7 @@
     <script src="assets/js/app.js"></script>
 
     <script id="template-streamer-card" type="text/html">
-      <div class="online green card">
+      <div class="online green card" data-name="{{stream.channel.name}}" data-online="true" data-valid="true">
         <div class="card-header content">
           <img class="ui avatar image" src="{{stream.channel.logo}}"> {{stream.channel.display_name}}
         </div>
@@ -90,7 +90,7 @@
     </script>
 
     <script id="template-channel-card" type="text/html">
-      <div class="offline blue card">
+      <div class="offline blue card" data-name="{{name}}" data-online="false" data-valid="true">
         <div class="card-header content">
           <img class="ui avatar image" src="{{logo}}"> {{display_name}}
         </div>
@@ -133,7 +133,7 @@
     </script>
 
     <script id="template-invalid-stream" type="text/html">
-      <div class="invalid yellow card">
+      <div class="invalid yellow card" data-name="{{name}}" data-online="false" data-valid="false">
         <div class="card-header content">
           <i class="big yellow warning sign icon"></i> {{name}}
         </div>

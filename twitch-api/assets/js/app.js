@@ -3,7 +3,7 @@ var app = {
   twitchApiPrefix: "https://api.twitch.tv/kraken/",
   twitchApiSuffix: "?callback=?",
   usersArray: [
-    "freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "brunofin", "comster404", "test_channel"
+    "freecodecamp", "storbeck", "terakilobyte", "monstercat", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "brunofin", "comster404", "test_channel"
   ],
 
   initCards: function( arrayOfUsers) {

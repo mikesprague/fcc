@@ -167,7 +167,7 @@ var app = {
   },
 
   fixSizing: function() {
-    $( ".content::last" ).css( "flex-grow", "1" );
+    $( ".content:last" ).css( "flex-grow", "1" );
   },
 
   init: function() {

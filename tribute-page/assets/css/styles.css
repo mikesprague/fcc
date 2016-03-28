@@ -1,33 +1,67 @@
+* {
+  text-rendering: optimizeLegibility;
+}
+
+html,
 body {
-  padding-bottom: 100px;
-}
-
-h2 em {
-  font-family: Times, "Times New Roman", Georgia, serif;
-}
-
-p {
-  font-size: 1.2em;
+  font-size: 18px;
   line-height: 1.5em;
+  font-family: Calibri, "Century Gothic", Tahoma, Arial, sans-serif;
+
+  @media screen and (min-width: 900px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+}
+
+body {
+  padding-bottom: 6em;
+}
+
+h3 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+}
+
+.page-header h2 {
+  font-family: Georgia, "Times New Roman", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.page-header h2 em {
+  font-size: 2rem;
+}
+
+.page-header h2 .fa {
+  font-size: 2rem;
+}
+
+.well h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .as-photo {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
 }
 
 .embed-responsive {
-  margin: 25px auto;
+  margin: 1.5em auto;
 }
 
 h2 sup {
-  font-size: 50%;
+  font-size: 0.75em;
 }
 
-.well p,
-.well ol {
-  font-size: 90%;
+.well {
+  font-size: 0.9em;
 }
 
 footer {
@@ -42,7 +76,7 @@ footer {
 
 footer p {
   margin-top: 20px;
-  font-size: 1em;
+  font-size: 0.9rem;
 }
 
 footer p a,

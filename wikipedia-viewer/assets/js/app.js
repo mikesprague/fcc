@@ -3,16 +3,21 @@ var app = {
   wikipediaEndpoint: "https://en.wikipedia.org/w/api.php",
   searchSuffix: "?action=query&format=json&prop=extracts|pageimages&generator=search&utf8=1&exsentences=1&exlimit=max&exintro=1&explaintext=1&exsectionformat=plain&piprop=thumbnail|name|original&pithumbsize=200&pilimit=max&gsrnamespace=0&gsrwhat=text&gsrlimit=20&redirects=1&gsrsearch=",
   apiUserAgent: "FccWikipediaViewer-MS/v0.5.0",
-
+  noSearchResultsString: "<h1>No Results: <small>Please try another search term</small></h1>",
+  brokenImageSrc: "https://placehold.it/215?text=n/a",
 
   initSearchField: function() {
+
     var currentSearchRequest = null;
-    $( ".search-field" ).on( "keyup", function(e) {
+    var searchField = $( ".search-field" );
+
+    searchField.on( "keyup", function(e) {
+
       var searchQuery = encodeURIComponent( $.trim( $( this ).val() ));
 
       if (( searchQuery !== "" ) && ( searchQuery.length > 1 )) {
-        var fullUrlToCall = app.wikipediaEndpoint + app.searchSuffix + searchQuery;
 
+        var fullUrlToCall = app.wikipediaEndpoint + app.searchSuffix + searchQuery;
         currentSearchRequest = $.ajax({
           url: fullUrlToCall,
           dataType: "jsonp",
@@ -22,62 +27,95 @@ var app = {
             "Api-User-Agent": app.apiUserAgent,
             "Access-Control-Allow-Origin": "*"
           },
-          cache: true,
+          cache: false,
+
           beforeSend : function()    {
             if ( currentSearchRequest != null ) {
+
               currentSearchRequest.abort();
+
             }
           },
+
           success: function ( data ) {
             try {
+
               app.renderSearchResults( data.query.pages );
+
             } catch (e) {
+
               app.clearSearchResults();
               app.noSearchResults();
+
             };
+
             currentSearchRequest = null;
+
           },
+
           error: function( error ) {
-            console.log( error );
+
             currentSearchRequest = null;
+
           }
+
         });
+
       } else {
+
         app.clearSearchResults();
+
       }
 
     });
-    $( ".search-field" ).focus();
+
+    searchField.focus();
 
   },
 
   renderSearchResults: function( results ) {
+
     app.clearSearchResults();
+
     var searchResultsArray = Object.keys( results ).map(
+
       function( key ) {
         return results[key]
       }
+
     );
+
     for ( var i = 0; i < searchResultsArray.length; i++ ) {
+
       var searchResultTemplate = $( "#template-search-result" ).html();
       var searchResultString = Mustache.render( searchResultTemplate, searchResultsArray[i] );
+
       $( ".search-results" ).append( searchResultString );
+
     }
+
     app.fixBrokenImages();
+
   },
 
   clearSearchResults: function() {
+
     $( ".search-results" ).empty();
+
   },
 
   noSearchResults: function() {
-    $( ".search-results" ).html( "<h1>No Results: <small>Please try another search term</small></h1>" );
+
+    $( ".search-results" ).html( app.noSearchResultsString );
+
   },
 
   fixBrokenImages: function() {
+
     $( "img" ).error( function() {
-      $( this ).attr( "src", "https://placehold.it/215?text=n/a" );
+      $( this ).attr( "src", app.brokenImageSrc );
     });
+
   },
 
   init: function() {

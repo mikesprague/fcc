@@ -64,8 +64,8 @@ h2 sup {
   font-size: 0.75em;
 }
 
-.well {
-  font-size: 0.9em;
+.well.sources {
+  font-size: 0.9rem;
 }
 
 footer {
@@ -79,7 +79,7 @@ footer {
 }
 
 footer p {
-  margin-top: 20px;
+  margin-top: 1rem;
   font-size: 0.9rem;
 }
 

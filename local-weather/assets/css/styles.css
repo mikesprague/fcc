@@ -2,14 +2,29 @@
   text-rendering: optimizeLegibility;
 }
 
-html,
 body {
-  height: 100%;
-  min-height: 100vh;
-
-  color: rgb(255, 255, 255);
-
+  font-size: 16px;
+  line-height: 1.5em;
   font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 24px;
+  }
 }
 
 .loading-spinner {
@@ -18,16 +33,14 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-
   display: none;
-
-  height: 100px;
+  height: 5em;
   margin: auto;
 }
 
 .weather-data {
-  min-height: 200px;
-  margin-top: 20px;
+  min-height: 12.5em;
+  margin-top: 1.25em;
 }
 
 .current-conditions {
@@ -35,8 +48,7 @@ body {
 }
 
 p {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25em;
 }
 
 .alt-unit {
@@ -66,43 +78,37 @@ h2 small {
 
 h1 {
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 0.3em;
   text-transform: capitalize;
-
-  font-size: 36px;
+  font-size: 2.25em;
   font-weight: bold;
 }
 
 h1 > small {
   white-space: nowrap;
-  letter-spacing: 6px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-
   font-weight: bold;
 }
 
 h2 {
-  margin-top: 10px;
-  padding: 0;
-
-  font-size: 22px;
+  margin-left: 1.25em;
+  font-size: 1.4em;
   font-weight: bold;
-  letter-spacing: 4px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 > small {
-  font-size: 30px;
+  font-size: 1.2em;
   text-transform: capitalize;
-  letter-spacing: normal;
-}
-
-hr {
-  margin: 0 auto;
+  letter-spacing: 0.1em;
+  text-align: center;
 }
 
 .current-icon p,
-.current-temp p,
+.current-temp  p,
 .current-pressure p,
 .current-wind p,
 .current-sunrise-sunset p,
@@ -115,37 +121,28 @@ hr {
 }
 
 .current-temp  p {
-  cursor: pointer;
+  font-size: 5em;
+  cursor: pointer !important;
 }
 
 .current-icon i {
-  margin-top: 20px;
-
-  font-size: 70px;
-}
-
-.current-temp p {
-  margin-top: -20px;
-
-  font-size: 90px;
+  font-size: 3em;
+  margin-top: 0.2em;
 }
 
 .last-updated p {
   margin-top: 0;
-
   text-align: center;
-
-  font-size: 14px;
+  font-size: 0.9em;
 }
 
 .forecast {
-  margin-top: 10px;
+  margin-top: 0.6em;
 }
 
 .forecast p {
   white-space: nowrap;
-
-  font-size: 15px;
+  font-size: 1em;
 }
 
 .template-error-message {
@@ -154,17 +151,15 @@ hr {
 
 hr {
   display: none;
-
-  margin: 10px auto;
+  margin: 0.4em auto;
 }
 
 .main-container {
-  margin-bottom: -60px;
+  margin-bottom: -3.75em;
 }
 
 .main-container::after {
   display: block;
-
   content: "";
 }
 
@@ -208,75 +203,4 @@ a.link-toggle-units:active {
   .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
-}
-
-@media only screen and (max-width: 400px) {
-
-  .current-icon i {
-    margin-top: 10px;
-
-    font-size: 50px;
-  }
-
-  .github-corner {
-    display: none;
-  }
-
-  .current-temp p {
-    margin-top: -10px;
-
-    font-size: 60px;
-  }
-
-  .weather-data {
-    margin-top: 5px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  h2 > small {
-    font-size: 24px;
-  }
-
-}
-
-@media (min-width: 850px) {
-
-  p {
-    font-size: 24px;
-  }
-
-  h1 {
-    font-size: 60px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  h2 > small {
-    font-size: 40px;
-  }
-
-  .forecast p {
-    font-size: 20px;
-  }
-
-  .last-updated p {
-    font-size: 18px;
-  }
-
-  .current-temp p {
-    margin-top: 0;
-
-    font-size: 110px;
-  }
-
-  .current-icon i {
-    font-size: 100px;
-    margin-top: 0;
-  }
-
 }

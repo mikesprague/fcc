@@ -11,6 +11,7 @@ var app = {
   defaultFlickrTags: "flowers",
 
   getBackgroundFromFlickr: function( tags ) {
+
     var randomPhoto = "",
         bgSmall = "",
         bgLarge = "";
@@ -30,15 +31,18 @@ var app = {
       sort: "relevance",
       media: "photos"
     }, function ( data ) {
+
       randomPhoto = data.items[ Math.floor( Math.random() * data.items.length )];
       bgSmall = randomPhoto.media.m;
       bgLarge = bgSmall.replace( "_m", "" ); // "_c"
       app.setBodyBackgroundImage( bgLarge );
+
     });
 
   }, // end getBackgroundFromFlickr()
 
   setBodyBackgroundImage: function( bgImage ) {
+
     if ( $.trim( bgImage ).length > 5  ) {
       $( "body" ).animate( { opacity: 0 }, 0 )
         .css( "background-image", "url(" + bgImage + ")" )
@@ -48,6 +52,7 @@ var app = {
   }, // end setBodyBackgroundImage()
 
   getRandomQuoteOnDesign: function() {
+
     var quoteData = [],
         quoteId = 0,
         quoteAuthor = "",
@@ -57,10 +62,12 @@ var app = {
         quoteSource = "";
 
     app.quoteElement.html( app.loadingIndicator );
+
     $.ajax({
       url: app.designQuoteApiUUrl,
       cache: false,
       success: function ( data ) {
+
         quoteData = data.shift();
         quoteId = quoteData.ID;
         quoteAuthorText = $.trim( quoteData.title );
@@ -79,6 +86,7 @@ var app = {
         }
         $( ".quote-author" ).html( quoteAuthor ).show();
         $( "[data-toggle='tooltip']" ).tooltip();
+
       },
       error: function( error ) {
         app.quoteElement.html( "" ).html( error );
@@ -97,33 +105,48 @@ var app = {
   }, // end sendTwet()
 
   initTweetButton: function() {
+
     app.btnTweetQuote.on( "click", function( e ) {
+
       e.preventDefault();
       e.stopPropagation();
       app.sendTweet();
+
     });
 
   }, // end initTweetButton()
 
   initNewQuoteButton: function() {
+
     app.btnNewQuote.on( "click", function( e ) {
+
       e.preventDefault();
       e.stopPropagation();
       app.getNewQuote();
+
     });
 
   }, // end initNewQuoteButton()
 
   getNewQuote: function() {
+
     app.getBackgroundFromFlickr();
     app.getRandomQuoteOnDesign();
 
-  } //end getNewQuote()
+  }, //end getNewQuote()
+
+  init: function() {
+
+    app.getNewQuote();
+    app.initNewQuoteButton();
+    app.initTweetButton();
+
+  } // end init()
 
 };
 
 jQuery( document ).ready( function( $ ){
-  app.getNewQuote();
-  app.initNewQuoteButton();
-  app.initTweetButton();
+
+  app.init();
+
 });

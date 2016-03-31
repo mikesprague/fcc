@@ -5,6 +5,7 @@ var app = {
   usersArray: [
     "freecodecamp", "storbeck", "mikesprague", "terakilobyte", "monstercat", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "brunofin", "comster404", "test_channel"
   ],
+  timerBar: null,
 
   initCards: function( arrayOfUsers) {
 
@@ -181,13 +182,37 @@ var app = {
 
   toggleLiveData: function( isEnabled ) {
 
+    var progressBarCount = 0;
+
     if ( isEnabled === true ) {
 
-      console.log( "enable live data refresh");
+      var progressBar = new Nanobar({
+        bg: "#fff",
+        id: "nanoBar"
+      });
+
+      app.timerBar = window.setInterval( function() {
+
+        progressBarCount += 1;
+        progressBar.go( progressBarCount );
+
+        if ( progressBarCount === 100 ) {  // 5 minutes
+
+          clearInterval( app.timerBar );
+          progressBarCount = 0;
+          // TODO: empty container and create new cards
+          // app.initCards( app.usersArray );
+          // app.fixBrokenImages();
+          // app.fixSortSizing();
+
+        }
+
+      }, 3000 ); // update progressbar every 3 seconds
 
     } else if ( isEnabled === false ) {
 
-      console.log( "disable live data");
+      clearInterval( app.timerBar );
+      $( "#nanoBar" ).empty().remove();
 
     }
 
@@ -201,6 +226,7 @@ var app = {
       onChecked: function() {
         app.toggleLiveData( true );
       },
+
       onUnchecked: function() {
         app.toggleLiveData( false )
       }

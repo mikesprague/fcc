@@ -168,7 +168,45 @@ var app = {
   },
 
   fixSortSizing: function() {
+
     $( ".content:last" ).css( "flex-grow", "1" );
+
+  },
+
+  initPopups: function() {
+
+    $( ".tooltip" ).popup();
+
+  },
+
+  toggleLiveData: function( isEnabled ) {
+
+    if ( isEnabled === true ) {
+
+      console.log( "enable live data refresh");
+
+    } else if ( isEnabled === false ) {
+
+      console.log( "disable live data");
+
+    }
+
+  },
+
+  initLiveRefreshToggle() {
+
+    $( ".checkbox" ).checkbox({
+
+      fireOnInit: false,
+      onChecked: function() {
+        app.toggleLiveData( true );
+      },
+      onUnchecked: function() {
+        app.toggleLiveData( false )
+      }
+
+    });
+
   },
 
   init: function() {
@@ -177,6 +215,8 @@ var app = {
     app.initFixedHeader();
     app.fixBrokenImages();
     app.fixSortSizing();
+    app.initPopups();
+    app.initLiveRefreshToggle();
 
   }
 };

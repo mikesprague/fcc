@@ -8,6 +8,7 @@ var app = {
   timerBar: null,
 
   initCards: function( arrayOfUsers) {
+    'use strict';
 
     for ( var i = 0; i < arrayOfUsers.length; i++ ) {
       app.getTwitchData( "streams", arrayOfUsers[i] );
@@ -18,6 +19,7 @@ var app = {
   },
 
   initDimmable: function() {
+    'use strict';
 
     $( ".dimmable.image" ).dimmer({
       on: "hover"
@@ -26,6 +28,7 @@ var app = {
   },
 
   initFixedHeader: function() {
+    'use strict';
 
     $( ".main.menu" ).visibility({
       type: "fixed"
@@ -38,6 +41,8 @@ var app = {
   },
 
   getTwitchData: function( type, user ) {
+    'use strict';
+
     $.ajax({
 
       url: app.getApiUrl( type, user ),
@@ -84,6 +89,7 @@ var app = {
   },
 
   renderData: function( type, data ) {
+    'use strict';
 
     if ( type === "stream" ) {
 
@@ -107,6 +113,7 @@ var app = {
   },
 
   initFiltering: function() {
+    'use strict';
 
     $( "#sortable-cards" ).mixItUp({
       load: {
@@ -137,6 +144,7 @@ var app = {
   },
 
   renderInvalid: function( user ) {
+    'use strict';
 
     var invalidData = {
       "name": user
@@ -150,6 +158,7 @@ var app = {
   },
 
   handleError: function( error ) {
+    'use strict';
 
     //TODO: ajax error handling
     console.log( error );
@@ -157,12 +166,14 @@ var app = {
   },
 
   getApiUrl: function( type, uid ) {
+    'use strict';
 
     return app.twitchApiPrefix + type + "/" + uid + app.twitchApiSuffix;
 
   },
 
   fixBrokenImages: function() {
+    'use strict';
 
      $( "img" ).error( function() {
        $( this ).attr( "src", "https://placehold.it/300?text=N/A" );
@@ -171,12 +182,14 @@ var app = {
   },
 
   fixSortSizing: function() {
+    'use strict';
 
     $( ".content:last" ).css( "flex-grow", "1" );
 
   },
 
   removeDuplicateCards: function() {
+    'use strict';
 
     $( "[id]" ).each(function () {
       $( "[id='" + this.id + "']:gt(0)" ).remove();
@@ -185,12 +198,14 @@ var app = {
   },
 
   initPopups: function() {
+    'use strict';
 
     $( ".tooltip" ).popup();
 
   },
 
   toggleLiveData: function( isEnabled ) {
+    'use strict';
 
     var progressBarCount = 0;
 
@@ -231,6 +246,7 @@ var app = {
   },
 
   initLiveRefreshToggle() {
+    'use strict';
 
     $( ".refresh-toggle" ).checkbox({
 
@@ -248,6 +264,7 @@ var app = {
   },
 
   init: function() {
+    'use strict';
 
     app.initCards( app.usersArray );
     app.initFixedHeader();

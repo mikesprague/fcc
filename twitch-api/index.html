@@ -19,15 +19,15 @@
     <div class="ui borderless large main menu">
       <div class="ui container">
         <div class="header item">
-          <i class="big white inverted twitch icon"></i>Streaming (API) Project
+          <i class="big white inverted twitch icon"></i>Twitch API Project
         </div>
         <div class="item">
-          <div class="ui toggle checkbox tooltip" data-title="Live Refresh" data-content="Refreshes data every 5 minutes when enabled">
-            <input type="checkbox" id="refresh-toggle"><label for="refresh-toggle">Live Data</label>
+          <div class="ui toggle checkbox tooltip" data-title="Live Refresh" data-content="Refreshes data every 60 seconds when enabled">
+            <input type="checkbox" id="refresh-toggle"><label for="refresh-toggle">Live Refresh</label>
           </div>
         </div>
-        <div href="#" class="ui right floated dropdown item">
-         Filter Users<i class="dropdown icon"></i>
+        <div href="#" class="ui right dropdown item">
+         Filter by Status<i class="dropdown icon"></i>
           <div class="menu">
             <div class="filter item" data-filter="all"><i class="violet users icon"></i> Show All</div>
             <div class="filter item" data-filter=".online"><i class="green record icon"></i> Streaming</div>
@@ -57,7 +57,7 @@
     <script src="assets/js/app.js"></script>
 
     <script id="template-streamer-card" type="text/html">
-      <div class="online green card" data-name="{{stream.channel.name}}" data-online="true" data-valid="true">
+      <div class="online green card" id="{{stream.channel.name}}" data-name="{{stream.channel.name}}" data-online="true" data-valid="true">
         <div class="card-header content">
           <img class="ui avatar image" src="{{stream.channel.logo}}"> {{stream.channel.display_name}}
         </div>
@@ -100,7 +100,7 @@
     </script>
 
     <script id="template-channel-card" type="text/html">
-      <div class="offline blue card" data-name="{{name}}" data-online="false" data-valid="true">
+      <div class="offline blue card" id="{{name}}" data-name="{{name}}" data-online="false" data-valid="true">
         <div class="card-header content">
           <img class="ui avatar image" src="{{logo}}"> {{display_name}}
         </div>
@@ -143,7 +143,7 @@
     </script>
 
     <script id="template-invalid-stream" type="text/html">
-      <div class="invalid yellow card" data-name="{{name}}" data-online="false" data-valid="false">
+      <div class="invalid yellow card" id="{{name}}" data-name="{{name}}" data-online="false" data-valid="false">
         <div class="card-header content">
           <i class="big yellow warning sign icon"></i> {{name}}
         </div>

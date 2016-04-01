@@ -232,7 +232,7 @@ var app = {
 
   initLiveRefreshToggle() {
 
-    $( ".checkbox" ).checkbox({
+    $( ".refresh-toggle" ).checkbox({
 
       fireOnInit: false,
       onChecked: function() {
@@ -255,6 +255,7 @@ var app = {
     app.fixSortSizing();
     app.initPopups();
     app.initLiveRefreshToggle();
+    app.toggleLiveData( true );
 
   }
 };

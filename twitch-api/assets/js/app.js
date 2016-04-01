@@ -90,14 +90,14 @@ var app = {
       var streamerCardTemplate = $( "#template-streamer-card" ).html();
       var streamerCardString = Mustache.render( streamerCardTemplate, data );
 
-      $( ".twitch.cards" ).append( streamerCardString );
+      $( ".cards.twitch" ).append( streamerCardString );
 
     } else if ( type === "channel" ) {
 
       var channelCardTemplate = $( "#template-channel-card" ).html();
       var channelCardString = Mustache.render( channelCardTemplate, data );
 
-      $( ".twitch.cards" ).append( channelCardString );
+      $( ".cards.twitch" ).append( channelCardString );
 
     }
 
@@ -125,9 +125,11 @@ var app = {
       callbacks: {
       	onMixEnd: function( state ) {
           app.fixSortSizing();
+          app.removeDuplicateCards();
       	},
         onMixLoad: function( state ) {
           app.fixSortSizing();
+          app.removeDuplicateCards();
       	}
       }
     });
@@ -143,7 +145,7 @@ var app = {
     var invalidTemplate = $( "#template-invalid-stream" ).html();
     var invalidString = Mustache.render( invalidTemplate, invalidData );
 
-    $( ".twitch.cards" ).append( invalidString );
+    $( ".cards.twitch" ).append( invalidString );
 
   },
 
@@ -174,6 +176,14 @@ var app = {
 
   },
 
+  removeDuplicateCards: function() {
+
+    $( "[id]" ).each(function () {
+      $( "[id='" + this.id + "']:gt(0)" ).remove();
+    });
+
+  },
+
   initPopups: function() {
 
     $( ".tooltip" ).popup();
@@ -196,23 +206,25 @@ var app = {
         progressBarCount += 1;
         progressBar.go( progressBarCount );
 
-        if ( progressBarCount === 100 ) {  // 5 minutes
+        if ( progressBarCount > 100 ) {
 
           clearInterval( app.timerBar );
-          progressBarCount = 0;
-          // TODO: empty container and create new cards
-          // app.initCards( app.usersArray );
-          // app.fixBrokenImages();
-          // app.fixSortSizing();
+          $( "#sortable-cards" ).mixItUp( "destroy", true );
+          $( "#nanoBar" ).remove();
+          app.initCards( app.usersArray );
+          app.initFiltering();
+          app.fixSortSizing();
+          app.toggleLiveData( true );
+          app.removeDuplicateCards();
 
         }
 
-      }, 3000 ); // update progressbar every 3 seconds
+      }, 600 )
 
     } else if ( isEnabled === false ) {
 
       clearInterval( app.timerBar );
-      $( "#nanoBar" ).empty().remove();
+      $( "#nanoBar" ).remove();
 
     }
 
